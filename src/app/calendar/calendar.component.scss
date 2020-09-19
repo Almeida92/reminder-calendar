@@ -1,0 +1,79 @@
+@import 'variables';
+
+*:before, *:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.root {
+    min-height: 100vh;
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar {
+    padding: 20px 10px;
+    background-color: $color-bg-calendar;
+    border-radius: 3px;
+    width: 100%;
+    max-width: 600px;
+    font-family: sans-serif;
+}
+
+.calendar-header {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.calendar .control {
+    color: #fff;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.grid-header, .grid-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.grid-header {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.grid-body {
+    grid-auto-rows: 85px;
+    color: $color-cell;
+}
+
+.grid-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-cell-gd {
+    cursor: pointer;
+}
+
+.grid-cell-selected {
+    color: $color-bg-calendar;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px $color-bg-calendar inset;
+}
+
+.grid-cell-disabled {
+    color: $color-cell-disabled;
+    cursor: not-allowed;
+}
