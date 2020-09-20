@@ -10,8 +10,9 @@ import { Days } from './days.enum';
 export class CalendarComponent implements OnInit {
 
   public cells: Array<any>;
+  public monthName: string;
   private currentMonth = moment();
-
+  
   constructor() { }
 
   ngOnInit(): void {
@@ -19,6 +20,7 @@ export class CalendarComponent implements OnInit {
   }
 
   generateDate(monthToShow = moment()) {
+    this.monthName = this.currentMonth.format('MMM YYYY');
     if (!moment.isMoment(monthToShow)) {
       return null;
     }
@@ -43,7 +45,17 @@ export class CalendarComponent implements OnInit {
       dateStart.add(1, 'day')
     } while (dateStart.isSameOrBefore(dateEnd));
 
-    return cells
+    return cells;
+  }
+
+  changeMonth(change: string) {
+    if (change === 'next') {
+      this.currentMonth.add(1, 'months');
+    } else {
+      this.currentMonth.subtract(1, 'months');
+    }
+
+    this.cells = this.generateDate(this.currentMonth);
   }
 
 }

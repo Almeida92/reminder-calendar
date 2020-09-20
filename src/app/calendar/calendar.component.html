@@ -1,8 +1,8 @@
 <div class="calendar" id="calendar">
     <div class="calendar-header">
-        <button type="button" class="control control--prev">&lt;</button>
-        <span class="month-name">September 2020</span>
-        <button type="button" class="control control-next">&gt;</button>
+        <button type="button" class="control control-prev" (click)="changeMonth('prev')">&lt;</button>
+        <span class="month-name">{{ monthName }}</span>
+        <button type="button" class="control control-next" (click)="changeMonth('next')">&gt;</button>
     </div>
     <div class="calendar-body">
         <div class="grid">
