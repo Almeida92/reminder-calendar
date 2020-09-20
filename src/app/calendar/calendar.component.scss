@@ -6,14 +6,6 @@
     box-sizing: border-box;
 }
 
-.root {
-    min-height: 100vh;
-    padding: 0 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .calendar {
     padding: 20px 10px;
     background-color: $color-bg-calendar;
